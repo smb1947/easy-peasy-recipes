@@ -8,7 +8,7 @@ The app answers one everyday question:
 
 > What can I make right now with what I already have?
 
-Instead of asking users to search through endless recipes, Easy Peasy Recipes starts from the user's real kitchen inventory, time constraints, food preferences, and trusted friend recommendations. It turns cooking from a decision-heavy task into a quick, confident choice.
+Instead of asking users to search through endless recipes, Easy Peasy Recipes starts from the user's real kitchen, time constraints, food preferences, and trusted friend recommendations. It turns cooking from a decision-heavy task into a quick, confident choice.
 
 The app should feel like a calm, practical kitchen companion: fast, useful, personal, and easy enough to use while standing in front of the fridge.
 
@@ -74,7 +74,7 @@ Shankar opens the app at home. He has cucumber, carrot, tomato, onion, cumin see
 ## 4. Product Principles
 
 1. **Start with what the user has**
-   Recommendations should be grounded in the user's inventory.
+   Recommendations should be grounded in the user's kitchen.
 
 2. **Default to quick decisions**
    The user should see useful recipe ideas without configuring too much.
@@ -103,7 +103,7 @@ Shankar opens the app at home. He has cucumber, carrot, tomato, onion, cumin see
 - Mobile-first responsive recipe recommendations website
 - Home feed with recipe recommendations
 - Expandable top controls for groceries, utensils, time range, and food preference
-- Inventory page for fridge, shelf, and kitchen utensils
+- Kitchen page for fridge, shelf, and kitchen utensils
 - Friend following
 - Friend profile pages with recipe recommendations
 - Recipe detail pages
@@ -139,7 +139,7 @@ Recommended bottom navigation:
 1. **Home**
    Personalized recipe feed and controls
 
-2. **Inventory**
+2. **Kitchen**
    Groceries, pantry items, and utensils
 
 3. **Friends**
@@ -241,19 +241,19 @@ Prioritize recipes that:
 
 ---
 
-## 7.2 Inventory Page
+## 7.2 Kitchen Page
 
 ### Purpose
 
-The Inventory Page lets users manage the ingredients, pantry items, and utensils they have at home.
+The Kitchen Page lets users manage the ingredients, pantry items, and utensils they have at home.
 
 ### Example Household
 
-Inventory owner:
+Kitchen owner:
 
 - Shankar's home
 
-### Inventory Sections
+### Kitchen Sections
 
 #### Fridge
 
@@ -288,7 +288,7 @@ Example utensils:
 - Rice pot
 - Pan
 
-### Inventory Actions
+### Kitchen Actions
 
 Users should be able to:
 
@@ -297,13 +297,13 @@ Users should be able to:
 - Delete item
 - Update quantity
 - Mark item as running low
-- Search inventory
+- Search kitchen
 - Filter by location
 - Add common items quickly
 - Add utensils
 - Remove utensils
 
-### Inventory Item Fields
+### Kitchen Item Fields
 
 Required:
 
@@ -345,13 +345,13 @@ Example utensil categories:
 - Serving
 - Storage
 
-### Inventory UX Requirements
+### Kitchen UX Requirements
 
 - Adding an item should take fewer than 10 seconds.
 - Quantity editing should be possible inline.
 - Users should not be forced to add expiry dates.
 - The page should feel like a lightweight checklist, not a spreadsheet.
-- Recommendations should update after inventory changes.
+- Recommendations should update after kitchen changes.
 
 ---
 
@@ -432,7 +432,7 @@ Each recipe should include:
 - Short-form availability
 - Long-form availability
 - Missing ingredients
-- Inventory match score
+- Kitchen match score
 - Friend recommendation source
 - Dietary tags, if available
 
@@ -505,7 +505,7 @@ Recommended structure:
 1. Recipe media header
 2. Recipe name
 3. Time, food type, difficulty, servings
-4. Inventory match summary
+4. Kitchen match summary
 5. Friend recommendation signal
 6. Format toggle: Text / Audio / Video
 7. Length toggle: Short / Long
@@ -624,7 +624,7 @@ Examples:
 
 ## 9.2 Add Groceries
 
-1. User opens Inventory.
+1. User opens Kitchen.
 2. User taps Add Item.
 3. User enters cucumber.
 4. User enters quantity: 2.
@@ -634,7 +634,7 @@ Examples:
 
 ## 9.3 Add a Utensil
 
-1. User opens Inventory.
+1. User opens Kitchen.
 2. User goes to Kitchen Utensils.
 3. User taps Add Utensil.
 4. User enters microwave.
@@ -707,7 +707,7 @@ Recommended visual direction:
 Use bottom navigation because the product is mobile-first and has five frequent destinations:
 
 - Home
-- Inventory
+- Kitchen
 - Friends
 - Saved
 - Profile
@@ -737,9 +737,9 @@ Highest priority information:
 - How long will it take?
 - Why is it recommended?
 
-### Inventory Design
+### Kitchen Design
 
-Inventory should feel like a fast checklist.
+Kitchen should feel like a fast checklist.
 
 Recommended design:
 
@@ -775,18 +775,18 @@ Design should support:
 
 ## 11. Functional Specifications
 
-## 11.1 Inventory Management
+## 11.1 Kitchen Management
 
 ### Requirements
 
-- User can create inventory items.
+- User can create kitchen items.
 - User can update quantities.
 - User can delete items.
 - User can assign storage location.
 - User can add utensils.
 - User can remove utensils.
-- User can search inventory.
-- User can filter inventory by category.
+- User can search kitchen items.
+- User can filter kitchen items by category.
 
 ### Acceptance Criteria
 
@@ -798,7 +798,7 @@ Design should support:
 
 ### Requirements
 
-- Feed loads recommendations based on inventory.
+- Feed loads recommendations based on the user's kitchen.
 - Feed defaults to recipes under 20 minutes.
 - Feed defaults to all food preferences.
 - User can expand filters.
@@ -876,7 +876,7 @@ Design should support:
 }
 ```
 
-## 12.2 Inventory Item
+## 12.2 Kitchen Item
 
 ```json
 {
@@ -1101,7 +1101,7 @@ Video should support:
 
 ### Activation
 
-- Percentage of users who add at least 5 inventory items
+- Percentage of users who add at least 5 kitchen items
 - Percentage of users who view a recipe in first session
 - Percentage of users who start cooking in first session
 
@@ -1122,13 +1122,13 @@ Video should support:
 - Save rate
 - Completion rate
 - Percentage of recipes dismissed
-- Percentage of recommendations with high inventory match
+- Percentage of recommendations with high kitchen match
 
 ### Retention
 
 - Weekly active users
 - Repeat cooking sessions
-- Inventory updates per week
+- Kitchen updates per week
 - Returning saved recipe usage
 
 ---
@@ -1151,7 +1151,7 @@ The product should stay focused on helping people decide what to cook at home.
 
 ## 18. Open Questions
 
-- Should users be able to share one household inventory with roommates or family in V1?
+- Should users be able to share one household kitchen with roommates or family in V1?
 - Should recipes be created by the app, imported from creators, or manually curated for MVP?
 - Should audio be generated from text or recorded separately?
 - Should video be hosted natively or embedded from external sources?
@@ -1165,19 +1165,18 @@ The product should stay focused on helping people decide what to cook at home.
 
 Build a mobile-first responsive web app called **Easy Peasy Recipes**.
 
-The app helps users discover recipes they can cook using ingredients and utensils they already have at home. The main user is Shankar. His home inventory includes fridge items like cucumber, carrot, tomato, and onion; shelf items like cumin seeds, mustard seeds, sauces, rice, salt, and pepper; and utensils like a microwave, grater, chopping board, rice pot, and pan.
+The app helps users discover recipes they can cook using ingredients and utensils they already have at home. The main user is Shankar. His kitchen includes fridge items like cucumber, carrot, tomato, and onion; shelf items like cumin seeds, mustard seeds, sauces, rice, salt, and pepper; and utensils like a microwave, grater, chopping board, rice pot, and pan.
 
-Create a polished, simple, intuitive product with five bottom navigation tabs: Home, Inventory, Friends, Saved, and Profile.
+Create a polished, simple, intuitive product with five bottom navigation tabs: Home, Kitchen, Friends, Saved, and Profile.
 
 The Home page should show compact controls at the top for groceries, utensils, time range, and food preference. The controls should be expandable. Default time should be 20 minutes. Default food preference should be All. Below the controls, show a personalized recipe feed with recipe cards. Each recipe card should include recipe name, thumbnail, time, food type, ingredient match, missing ingredients, required utensils, friend recommendation signal, Save button, and Start Cooking button.
 
-The Inventory page should show Shankar's home inventory grouped into Fridge, Shelf, and Kitchen Utensils. Users should be able to add, edit, delete, and update quantities. The interface should feel fast and lightweight.
+The Kitchen page should show Shankar's home kitchen grouped into Fridge, Shelf, and Kitchen Utensils. Users should be able to add, edit, delete, and update quantities. The interface should feel fast and lightweight.
 
 The Friends page should include profiles for Anjali, Varun, and Chandan. Users should be able to follow or unfollow friends. Friend profiles should show recommended recipes, favorite food types, and recently cooked recipes.
 
-The Recipe Detail page should support recipes in three formats: Text, Audio, and Video. Each format should have Short and Long versions. Each recipe should include metadata: recipe name, ingredients, utensils, food type, time to make, servings, difficulty, missing ingredients, and inventory match score.
+The Recipe Detail page should support recipes in three formats: Text, Audio, and Video. Each format should have Short and Long versions. Each recipe should include metadata: recipe name, ingredients, utensils, food type, time to make, servings, difficulty, missing ingredients, and kitchen match score.
 
 Add a Cooking Mode with large step-by-step instructions, previous and next controls, timer support, audio playback controls, and current step ingredients.
 
 Use warm, clean, modern design. Keep the app practical and uncluttered. Avoid making it feel like a social network or recipe blog. The primary experience should help the user quickly answer: "What can I make right now with what I already have?"
-

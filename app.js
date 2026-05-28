@@ -574,7 +574,7 @@ function renderHeader() {
 function renderTabs() {
   const tabs = [
     ["home", "Home", icons.home],
-    ["inventory", "Inventory", icons.inventory],
+    ["inventory", "Kitchen", icons.inventory],
     ["friends", "Friends", icons.friends],
     ["saved", "Saved", icons.saved],
     ["profile", "Profile", icons.profile],
@@ -695,7 +695,7 @@ function renderRecipeCard(recipe, analysis) {
           <span>${escapeHtml(recipe.foodType)}</span>
         </div>
         <div class="friend-signal">
-          ${analysis.friend ? `<img class="mini-avatar" src="${analysis.friend.photo}" alt="" /> Recommended by <strong>${escapeHtml(analysis.friend.name)}</strong>` : `${icons.leaf} Uses Shankar's inventory`}
+          ${analysis.friend ? `<img class="mini-avatar" src="${analysis.friend.photo}" alt="" /> Recommended by <strong>${escapeHtml(analysis.friend.name)}</strong>` : `${icons.leaf} Uses Shankar's kitchen`}
         </div>
         <div class="card-actions">
           <button class="secondary-button" data-action="start-cooking" data-id="${recipe.id}">${icons.play} Start</button>
@@ -716,7 +716,7 @@ function renderInventory() {
   return `
     <section class="section">
       <div class="section-heading">
-        <h2>Inventory</h2>
+        <h2>Kitchen</h2>
         <button class="secondary-button" data-action="focus-add">${icons.plus} Add</button>
       </div>
       <form class="quick-form" data-action="add-inventory">
@@ -882,7 +882,7 @@ function renderProfile() {
       <div class="profile-card">
         <h2>Test Profile Snapshot</h2>
         <div class="preference-grid">
-          <div class="preference"><strong>${state.inventory.length}</strong><span>Inventory items</span></div>
+          <div class="preference"><strong>${state.inventory.length}</strong><span>Kitchen items</span></div>
           <div class="preference"><strong>${state.utensils.filter((item) => item.available).length}</strong><span>Available utensils</span></div>
           <div class="preference"><strong>${readyCount}</strong><span>Ready-to-cook recipes</span></div>
           <div class="preference"><strong>${state.friends.filter((friend) => friend.following).length}</strong><span>Friends followed</span></div>
@@ -896,7 +896,7 @@ function renderProfile() {
       </div>
       <div class="profile-card">
         <h2>Demo Controls</h2>
-        <p class="muted">Reset Shankar's seeded inventory, saved recipes, friends, and filters.</p>
+        <p class="muted">Reset Shankar's seeded kitchen, saved recipes, friends, and filters.</p>
         <button class="ghost-button" data-action="reset-demo">Reset demo data</button>
       </div>
     </section>
@@ -1003,7 +1003,6 @@ function renderSidePanel() {
   const ready = recipes.filter(({ analysis }) => !analysis.missingIngredients.length && !analysis.missingUtensils.length).length;
   return `
     <aside class="side-panel" aria-label="Demo summary">
-      <img src="assets/product-concept.png" alt="Easy Peasy Recipes visual concept" />
       <h2>About Shankar's home</h2>
       <div class="stat-grid">
         <div class="stat"><strong>${ready}</strong><span>Ready recipes</span></div>
