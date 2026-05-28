@@ -199,7 +199,7 @@ const seed = {
       timeMinutes: 24,
       servings: 3,
       difficulty: "Easy",
-      image: image("photo-1565557623262-b51c2513a641a"),
+      image: image("photo-1631452180519-c014fe946bc7"),
       ingredients: [
         ["Capsicum", 1, "piece"],
         ["Onion", 1, "piece"],
