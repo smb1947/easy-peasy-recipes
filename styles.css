@@ -54,7 +54,7 @@ button {
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 24px;
   width: min(1180px, 100%);
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
   padding: 24px;
 }
@@ -63,7 +63,8 @@ button {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 48px);
+  height: calc(100vh - 48px);
+  min-height: 0;
   overflow: hidden;
   background: var(--surface);
   border: 1px solid rgba(31, 36, 29, 0.08);
@@ -134,6 +135,7 @@ button {
   min-height: 0;
   overflow: auto;
   padding: 18px;
+  overscroll-behavior: contain;
   scroll-behavior: smooth;
 }
 
@@ -613,6 +615,7 @@ button {
 
 .tab-bar {
   position: absolute;
+  z-index: 5;
   right: 0;
   bottom: 0;
   left: 0;
@@ -880,11 +883,13 @@ svg {
 @media (max-width: 920px) {
   .app-shell {
     grid-template-columns: minmax(0, 1fr);
+    height: 100vh;
     padding: 0;
   }
 
   .phone {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 0;
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -892,6 +897,23 @@ svg {
 
   .side-panel {
     display: none;
+  }
+}
+
+@supports (height: 100dvh) {
+  .app-shell {
+    height: 100dvh;
+  }
+
+  .phone {
+    height: calc(100dvh - 48px);
+  }
+
+  @media (max-width: 920px) {
+    .app-shell,
+    .phone {
+      height: 100dvh;
+    }
   }
 }
 
